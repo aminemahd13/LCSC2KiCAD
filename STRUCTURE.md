@@ -36,7 +36,7 @@ LCSC2KiCAD/
 ```
 
 
-## Installation Structure
+# Installation Structure
 
 When installed, the plugin creates:
 
