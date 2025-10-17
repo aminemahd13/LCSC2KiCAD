@@ -1,0 +1,9 @@
+# LCSC2KiCAD - Requirements
+
+# Core dependencies
+requests>=2.28.0
+pydantic>=2.0.0
+
+# Optional: For development and testing
+# pytest>=7.0.0
+# black>=22.0.0
