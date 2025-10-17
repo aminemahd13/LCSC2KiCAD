@@ -25,13 +25,13 @@ class FootprintExporter:
         self.component_name = component_name
         self.info = footprint_data.get("info", {})
     
-    def export(self, footprint_dir: str, overwrite: bool = False) -> bool:
+    def export(self, footprint_dir: str, overwrite: bool = True) -> bool:
         """
         Export footprint to KiCad library
         
         Args:
             footprint_dir: Path to .pretty directory
-            overwrite: Whether to overwrite existing footprint
+            overwrite: Whether to overwrite existing footprint (default: True)
             
         Returns:
             True if successful

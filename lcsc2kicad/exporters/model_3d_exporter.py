@@ -22,13 +22,13 @@ class Model3DExporter:
         self.model_data = model_data
         self.component_name = component_name
     
-    def export(self, model_dir: str, overwrite: bool = False) -> bool:
+    def export(self, model_dir: str, overwrite: bool = True) -> bool:
         """
         Export 3D model files
         
         Args:
             model_dir: Path to .3dshapes directory
-            overwrite: Whether to overwrite existing files
+            overwrite: Whether to overwrite existing files (default: True)
             
         Returns:
             True if successful

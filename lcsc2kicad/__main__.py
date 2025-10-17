@@ -59,9 +59,9 @@ def get_parser() -> argparse.ArgumentParser:
     )
     
     parser.add_argument(
-        "--overwrite",
+        "--no-overwrite",
         action="store_true",
-        help="Overwrite existing components"
+        help="Do not overwrite existing components (default: overwrite)"
     )
     
     parser.add_argument(
@@ -164,7 +164,7 @@ def main(argv: List[str] = None) -> int:
         converter = ComponentConverter(
             cad_data=cad_data,
             output_base=args.output,
-            overwrite=args.overwrite
+            overwrite=not args.no_overwrite  # Invert the flag logic
         )
         
         success = True

@@ -20,14 +20,14 @@ from lcsc2kicad.utils import sanitize_name
 class ComponentConverter:
     """Handles conversion of LCSC components to KiCad format"""
     
-    def __init__(self, cad_data: Dict, output_base: str, overwrite: bool = False):
+    def __init__(self, cad_data: Dict, output_base: str, overwrite: bool = True):
         """
         Initialize converter
         
         Args:
             cad_data: Component CAD data from API
             output_base: Base path for output files (without extension)
-            overwrite: Whether to overwrite existing files
+            overwrite: Whether to overwrite existing files (default: True)
         """
         self.cad_data = cad_data
         self.output_base = output_base

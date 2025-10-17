@@ -97,6 +97,3 @@ If you see an error about missing modules, install dependencies as described in 
 ### Library Not Found
 Make sure you've completed the Configuration steps above.
 
-## License
-
-This project is based on the easyeda2kicad.py library architecture.

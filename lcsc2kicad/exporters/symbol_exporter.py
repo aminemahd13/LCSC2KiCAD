@@ -25,13 +25,13 @@ class SymbolExporter:
         self.lcsc_id = lcsc_id
         self.info = symbol_data.get("info", {})
     
-    def export(self, lib_path: str, overwrite: bool = False) -> bool:
+    def export(self, lib_path: str, overwrite: bool = True) -> bool:
         """
         Export symbol to KiCad library
         
         Args:
             lib_path: Path to .kicad_sym library file
-            overwrite: Whether to overwrite existing symbol
+            overwrite: Whether to overwrite existing symbol (default: True)
             
         Returns:
             True if successful
