@@ -8,7 +8,6 @@ from pathlib import Path
 from typing import Dict, Optional
 
 from lcsc2kicad.api import LCSCApi
-from lcsc2kicad.parsers.symbol_parser import SymbolParser
 from lcsc2kicad.parsers.footprint_parser import FootprintParser
 from lcsc2kicad.parsers.model_3d_parser import Model3DParser
 from lcsc2kicad.exporters.symbol_exporter import SymbolExporter
@@ -56,16 +55,9 @@ class ComponentConverter:
                 logging.error("No symbol data in CAD data")
                 return False
             
-            # Parse symbol data
-            parser = SymbolParser(self.cad_data)
-            symbol_data = parser.parse()
-            
-            if not symbol_data:
-                logging.error("Failed to parse symbol data")
-                return False
-            
-            # Export to KiCad format
-            exporter = SymbolExporter(symbol_data, self.component_name, self.lcsc_id)
+            # Export to KiCad format using new architecture
+            # Pass full cad_data dict to exporter
+            exporter = SymbolExporter(self.cad_data, self.component_name, self.lcsc_id)
             symbol_lib_path = f"{self.output_base}.kicad_sym"
             
             success = exporter.export(symbol_lib_path, overwrite=self.overwrite)
